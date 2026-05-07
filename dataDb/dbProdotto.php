@@ -1,5 +1,5 @@
 <?php
-     require_once(".." .DIRECTORY_SEPARATOR."common.php");
+    require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'common.php');
     //require_once(Common::$PathModels."catalogo.php");
     require_once(Common::$PathModels."prodotto.php");
     class DbProdotto extends DbRepository {
@@ -98,12 +98,12 @@
                 <div class="container py-5">
                   <div class="row">';
                 while($row = $st->fetch(PDO::FETCH_ASSOC)){
-                    $link=Common::$PathViews."prodotto.php"."?id=".$row["ProdottoID"];
+                    $link = "/final_project/views/prodotto.php?id=" . $row["ProdottoID"];
                     //echo '<td>'.$id++.'</td>';
                     //echo '<div class="card-body">'.$row['ProdottoID'].'</td>';
                     echo '<div class="card col-4">
                     <div class="card-body">';
-                    echo '<img src="../Images/'.$row['NomeImmagine'].'.jpg" class="card-img-top" width="200" height="200">';
+                    echo '<img src="/final_project/Images/'.$row['NomeImmagine'].'.jpg" class="card-img-top" width="200" height="200">';
                     echo' <div class="d-flex justify-content-between">';
                     echo '<h5 class="card-title mb-3">'.$row['Prodotto'].'</h5>
                     </div>';

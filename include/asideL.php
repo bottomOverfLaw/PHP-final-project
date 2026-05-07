@@ -24,9 +24,9 @@
         if ($_SESSION["TipoUtente"]!="U") {
         ?>
         <!-- <button type="button" class="btn btn-outline-success"><a href="..\utenti\gestioneUtente.php" class="link-dark">Utenti</a></button> -->
-        <button type="button" class="btn btn-outline-danger btn-lg"><a href="..\views\login.php" class="link-dark link-underline-opacity-0">Login</a></button>
+        <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/login.php" class="link-dark link-underline-opacity-0">Login</a></button>
         <br>
-        <button type="button" class="btn btn-outline-danger btn-lg"><a href="..\views\newUtente.php" class="link-dark link-underline-opacity-0">Iscriviti</a></button>
+        <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/newUtente.php" class="link-dark link-underline-opacity-0">Iscriviti</></button>
         <br>
         <?php
         }

@@ -11,18 +11,15 @@ class DbUtente extends DbRepository
         $special = preg_match('@[\W]@', $password);
         
         if(!$uppercase || !$lowercase || !$number || !$special || strlen($password) < 8)
-        throw new Exception("Errore password");
+            throw new Exception("Errore password");
             
         return true;
     }
     //controllo che pw1 e pw2 siano uguali con php
     private function controllaPw(string $conPw, string $password):?bool {
-
-        $pw=$this->convalidaPassword($password);
-
-        if($conPw!=$pw)
+        $this->convalidaPassword($password);
+        if($conPw != $password)
             throw new Exception("Errore: le password non combaciano");
-            
         return true;
     }
     //convalida della mail con php

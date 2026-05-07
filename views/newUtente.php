@@ -30,31 +30,27 @@
 </head>
 <body>
 
-    <?php
-        require_once(".." .DIRECTORY_SEPARATOR."common.php");
-        require_once(Common::$PathDataDb."dbUtente.php");
-        $utente = new Utente();
+  <?php
+    require_once(dirname(__DIR__) .DIRECTORY_SEPARATOR."common.php");
+    require_once(Common::$PathDataDb."dbUtente.php");
+    $utente = new Utente();
 
-        $pw="";
-        $pw2="";
-        //echo $utente->GetUtenteId()."<br>";
-        //echo 'bello';
-        
-        if (isset($_POST['btnSub'])) {
-            $utente->SetNome($_POST['nome']);
-            $utente->SetMail($_POST['mail']);
-            $utente->SetTelefono($_POST['tel']);
-            $pw = $_POST['pass1'];
-            $pw2 = $_POST['pass2'];
+    $pw="";
+    $pw2="";
+    
+    if (isset($_POST['btnSub'])) {
+        $utente->SetNome($_POST['nome']);
+        $utente->SetMail($_POST['mail']);
+        $utente->SetTelefono($_POST['tel']);
+        $pw = $_POST['pass1'];
+        $pw2 = $_POST['pass2'];
 
-            $db = new DbUtente();
-            $db->Register($utente, $pw, $pw2);
-
-            if ($_SESSION["TipoUtente"]!="G") {
-              header("Location: ..\home\index.php");
-            }
-        }
-    ?>
+        $db = new DbUtente();
+        $db->Register($utente, $pw, $pw2);
+        header("Location: /final_project/views/login.php");
+        exit();
+    }
+  ?>
 
 <section class="vh-100" style="background-color: #ef927e;">
   <div class="container h-100">

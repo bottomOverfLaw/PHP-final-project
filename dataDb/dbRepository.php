@@ -6,7 +6,6 @@
         public function __construct() {
             if(strtolower($_SESSION ["DbType"]) == "mysql")
             {
-                //echo "ciao";
                 $this->db=new dbManager();
             }
             if(strtolower($_SESSION ["DbType"]) == "Postgre")

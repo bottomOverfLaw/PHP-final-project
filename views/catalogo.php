@@ -1,6 +1,6 @@
 
 <?php
-        require_once(".." .DIRECTORY_SEPARATOR."common.php");
+        require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'common.php');
         require_once(Common::$PathDataDb."dbProdotto.php");
         require_once(Common::$PathDataDb."dbUtente.php");
         require_once(Common::$PathModels."prodotto.php");

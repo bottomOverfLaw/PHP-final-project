@@ -3,26 +3,32 @@
 
 class Common
 {
-    static public string $PathModels = ".." .DIRECTORY_SEPARATOR. "models" .DIRECTORY_SEPARATOR;
-    static public string $PathViews = ".." .DIRECTORY_SEPARATOR. "views" .DIRECTORY_SEPARATOR;
-    static public string $PathDataDb = "..".DIRECTORY_SEPARATOR."dataDb" .DIRECTORY_SEPARATOR;
-    static public string $PathInclude = "..".DIRECTORY_SEPARATOR."include" .DIRECTORY_SEPARATOR;
+    static public string $PathModels = "";
+    static public string $PathViews = "";
+    static public string $PathDataDb = "";
+    static public string $PathInclude = "";
 
+    static public function InitPaths() {
+        self::$PathModels  = __DIR__ . DIRECTORY_SEPARATOR . "models"   . DIRECTORY_SEPARATOR;
+        self::$PathViews   = __DIR__ . DIRECTORY_SEPARATOR . "views"    . DIRECTORY_SEPARATOR;
+        self::$PathDataDb  = __DIR__ . DIRECTORY_SEPARATOR . "dataDb"   . DIRECTORY_SEPARATOR;
+        self::$PathInclude = __DIR__ . DIRECTORY_SEPARATOR . "include"  . DIRECTORY_SEPARATOR;
 
+    }
     static public function SetSession()
     {
         if(session_status()!= PHP_SESSION_ACTIVE)
             session_start();
-            
+        Common::ReadFileConfig();   
         if(isset($_SESSION["TipoUtente"])) 
             return;         
-        Common::ReadFileConfig();
+        
         $_SESSION["TipoUtente"]="G";
     }
 
     static public function ReadFileConfig()
     {
-        $fileConfig= parse_ini_file("..".DIRECTORY_SEPARATOR."config.ini");
+        $fileConfig = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . "config.ini");
 
         $_SESSION["DbType"]=$fileConfig["DbType"]; //MySql
         $_SESSION["DbHost"]=$fileConfig["DbHost"];//"localhost";
@@ -73,6 +79,7 @@ class Common
         return $_SESSION["Mail"];
     }
 }
+Common::InitPaths(); // initialize paths first
 Common::SetSession();
 require_once(Common::$PathDataDb."dbManager.php");
 require_once(Common::$PathDataDb."dbRepository.php");

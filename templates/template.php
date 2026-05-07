@@ -21,7 +21,7 @@
 <body >
     <div class="container-fluid" >
         <?php
-            require_once(".." .DIRECTORY_SEPARATOR."common.php");
+            require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'common.php');
             require_once(Common::$PathInclude."header.php");
         ?>
     </div>
@@ -29,7 +29,7 @@
         <main class="row d-flex">
             <aside id="asideL" class="col-sm-2 p-2 text-dark" style="background-color: #FFBC80;">
                 <?php
-                    require_once(".." .DIRECTORY_SEPARATOR."common.php");
+                    require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'common.php');
                     require_once(Common::$PathInclude."asideL.php");
                 ?>
             </aside>
@@ -45,7 +45,7 @@
     </div>
     <div class="continer-fluid mt-auto " style="background-color:#FFE7D5;">
         <?php
-            require_once(".." .DIRECTORY_SEPARATOR."common.php");
+            require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'common.php');
             require_once(Common::$PathInclude."footer.php");
         
         ?>

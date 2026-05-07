@@ -29,53 +29,39 @@
 </head>
 <body>
 <?php
- require_once(".." .DIRECTORY_SEPARATOR."common.php");
- require_once(Common::$PathDataDb."dbProdotto.php");
- require_once(Common::$PathDataDb."dbCarrello.php");
- 
- require_once(Common::$PathModels."prodotto.php");
- require_once(Common::$PathModels."carrello.php");
- $prodotto=new Prodotto();
- $dbP=new DbProdotto();
- $dbC=new dbCarrello();
- $cart= new Carrello();
-  
+require_once(dirname(__DIR__).DIRECTORY_SEPARATOR."common.php");
+require_once(Common::$PathDataDb."dbProdotto.php");
+require_once(Common::$PathDataDb."dbCarrello.php");
+require_once(Common::$PathModels."prodotto.php");
+require_once(Common::$PathModels."carrello.php");
+
+$prodotto = new Prodotto();
+$dbP = new DbProdotto();
+$dbC = new dbCarrello();
+$cart = new Carrello();
+
 if(isset($_GET['id'])){
-  $idProduct=$_GET['id'];
-  $prodotto=$dbP->SelectById($idProduct);  
-  //$cart->SetArticoloId($_GET['id']);
-  //var_dump($cart);
+    $idProduct = $_GET['id'];
+    $prodotto = $dbP->SelectById($idProduct);
 }
 
 $cart->SetPrezzo($prodotto->GetPrezzo());
-$cart->SetUtenteId($_SESSION['UtenteId']);
-//var_dump($prodotto);
 
-//var_dump($_SESSION);
-if(isset($_POST["btnSub"]))
-{
-  //var_dump($cart);
-
-  $cart->SetQta($_POST['qta']);
-  $cart->SetArticoloId($_POST["id"]);
-  //var_dump($cart);
-  //echo "ciao";
- $dbC->AddC($cart);
- //$ok=$dbC->AddC($cart);
-/* if($ok){
-  echo '<h5 class="card-title">articolo aggiunto correttamente al carrello</h5>';
- }*/
- //ob_clean();
-//header("Location: prodotto.php?id_prodotto=" . $idProduct);
-header("Location: ..\home\index.php");
+if($_SESSION["TipoUtente"] != "G" && isset($_SESSION['UtenteId'])) {
+    $cart->SetUtenteId($_SESSION['UtenteId']);
 }
 
-
-
- ?>
+if(isset($_POST["btnSub"])) {
+    $cart->SetQta($_POST['qta']);
+    $cart->SetArticoloId($_POST["id"]);
+    $dbC->AddC($cart);
+    header("Location: /final_project/home/index.php");
+    exit();
+}
+?>
 
 <div class="super_container" >
-    <header class="header" style="display: none;">
+  <header class="header" style="display: none;">
     <div class="row mb-4 d-flex justify-content-between align-items-center">
         <div class="header_main">
             <div class="container">

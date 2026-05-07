@@ -1,5 +1,5 @@
 <?php
-    $fileConfig = parse_ini_file(".." .DIRECTORY_SEPARATOR. "config.ini");
+    $fileConfig = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . "config.ini");
     
     $tipoDb = $fileConfig["DbType"];
     $host = $fileConfig["DbHost"];
