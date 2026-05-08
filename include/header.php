@@ -10,9 +10,11 @@ style="width: 185px;" alt="logo"></a>
 <?php
     //var_dump($_SESSION);
  if ($_SESSION["TipoUtente"]!="G") {
-    echo '<button type="button" class="btn btn-outline-danger"><a href="../views/carrello.php" class="link-dark d-inline">
-    <span><i class="fab fa-opencart" width="16" height="16"></i></span>
-    </a></button>';
+    ?>
+    <button type="button" class="btn btn-outline-danger"><a href="../views/carrello.php" class="link-dark d-inline">
+    <span><i class="fas fa-shopping-cart" width="16" height="16"></i></span>
+    </a></button>
+    <?php
   }
   // echo'<br>';
   // echo'<button type="button">A</button>';
