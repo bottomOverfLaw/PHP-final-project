@@ -6,9 +6,9 @@
         require_once(Common::$PathModels."prodotto.php");
         $dbU = new DbUtente();
         $dbP=new DbProdotto();
-        $currentPage = isset($_GET['page']) ?($_GET['page']) :1;
-        $sort_field = isset($_GET['sort']) ?($_GET['sort']) :'ProdottoID';
-        $sort_order = isset($_GET['order']) ?($_GET['order']) :'ASC';
+        $currentPage = isset($_GET['page']) ? ($_GET['page']) :1;
+        $sort_field = isset($_GET['sort']) ? ($_GET['sort']) :'ProdottoID';
+        $sort_order = isset($_GET['order']) ? ($_GET['order']) :'ASC';
         $catId = isset($_GET['id']) ?($_GET['id']) :0;
         //var_dump($sort_field);
         //var_dump($sort_order);
@@ -23,6 +23,7 @@
         $totalRecord=$pageUtility["totalRecords"];
         $totalPages=$pageUtility["totalPages"];
         // ricerca prodotti
+        
         echo '<form action="" method="get">';
         echo '<div class="input-group">';
         echo '<div class="form-outline">';
@@ -34,8 +35,8 @@
         <option value="Prezzo" '.($sort_field=='Prezzo' ? 'selected' :"").'>Prezzo</option>
         </select>
         <select name="order" id="order">
-        <option value="ASC" '.($sort_field=='ASC' ? 'selected' :"").'>crescente</option>
-        <option value="DESC" '.($sort_field=='DESC' ? 'selected' :"").'>decrescente</option>
+        <option value="ASC" '.($sort_order=='ASC' ? 'selected' :"").'>crescente</option>
+        <option value="DESC" '.($sort_order=='DESC' ? 'selected' :"").'>decrescente</option>
         </select>';
         
         echo'</select>';
