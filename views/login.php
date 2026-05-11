@@ -62,7 +62,7 @@
               <div class="card-body p-md-5 mx-md-4">
               <h5><a href="../home/index.php" class="link-dark"><i class="fas fa-arrow-left fa-lg me-3 fa-fw"></i></a></h5>
                 <div class="text-center">
-                  <a href="../home/index.php"><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                  <a href="../home/index.php"><img src="../Images/lotus.webp"
                     style="width: 185px;" alt="logo"></a>
                     
                   <h4 class="mt-1 mb-5 pb-1">Login:</h4>

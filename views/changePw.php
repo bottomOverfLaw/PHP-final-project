@@ -37,8 +37,6 @@
 
         $pw2="";
         $oldPw="";
-        //echo $utente->GetUtenteId()."<br>";
-        //echo 'bello';
         
         if (isset($_POST['btnSub'])) {
             $mail = ($_POST['mail']);
@@ -76,7 +74,7 @@
                 <div class="form-outline flex-fill mb-0">
                     <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="password" id="passold" name="passold" placeholder="Inserire password" 
                     value= "<?=$oldPw?>">
-                    <label class="form-label">Password vecchia<span class="controlloObbligatorio">*</span></label></span>
+                    <label class="form-label">Old passord<span class="controlloObbligatorio">*</span></label></span>
                         <div id="erPw"></div> 
                 </div> 
         </div> 
@@ -85,7 +83,7 @@
                 <div class="form-outline flex-fill mb-0">
                     <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="password" id="passnew" name="passnew" placeholder="Conferma password" 
                     value= "<?=$pw2?>"> 
-                    <label class="form-label">Password nuova<span class="controlloObbligatorio">*</span></label></span>
+                    <label class="form-label">New password<span class="controlloObbligatorio">*</span></label></span>
                     <div id="erConPw"></div>
                 </div> 
         </div>
@@ -94,15 +92,19 @@
                 <div class="form-outline flex-fill mb-0">
                     <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="password" id="passnew2" name="passnew2" placeholder="Conferma password" 
                     value= "<?=$pw2?>"> 
-                    <label class="form-label">Conferma password nuova<span class="controlloObbligatorio">*</span></label></span>
+                    <label class="form-label">Confirm new password<span class="controlloObbligatorio">*</span></label></span>
                         <div id="erConPw"></div>
                 </div>
         </div>
         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-            <button class="btn btn-primary" type="submit" value="submit" name="btnSub">Cambia password</button>
+            <button class="btn btn-primary" type="submit" value="submit" name="btnSub">Change password</button>
+            <!-- Go back without saving — browser history back -->
+            <a href="javascript:history.back()" class="btn btn-secondary">
+                <i class="fas fa-arrow-left me-1"></i> Cancel
+            </a>
         </div>
         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-            <a href="login.php">Torna al login </a>
+            <a href="login.php">Go to login </a>
         </div>
     </form>
     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
@@ -118,7 +120,6 @@
 </section>
 <?php
   }
-    //header("Location: login.php");
   ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

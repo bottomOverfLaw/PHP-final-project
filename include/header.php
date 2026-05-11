@@ -1,6 +1,6 @@
 <header class="row p-2 text-dark" style="background-color: #E06469 ;">
 <div class="col-sm-2">
-<a href="..\home\index.php"><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+<a href="..\home\index.php"><img src="../Images/lotus.webp"
 style="width: 185px;" alt="logo"></a>
 </div>
 <div class="col-sm-8 item-aling-center text-light">
@@ -16,8 +16,7 @@ style="width: 185px;" alt="logo"></a>
     </a></button>
     <?php
   }
-  // echo'<br>';
-  // echo'<button type="button">A</button>';
+
 ?>
 <hr>
     <a class="btn btn-primary" style="background-color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram"></i></a>

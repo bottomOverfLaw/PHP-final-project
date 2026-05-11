@@ -64,7 +64,7 @@
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
                     <form action="newUtente.php" method="post" onsubmit="convalidaSub()" class="mx-1 mx-md-4">
                     <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <i class="fa-solid fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                     <input class="form-control" type="text" id="nome" name="nome" placeholder="Inserire nome" 
                     onchange="convalidaNome()" value= "<?=$utente-> GetNome()?>">
@@ -73,7 +73,7 @@
                     </div>
                   </div>
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <i class="fa-solid fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                     <input class="form-control" type="text" id="mail" name="mail" placeholder="Inserire mail valida" 
                     onchange="convalidaMail()" value= "<?=$utente-> GetMail()?>"> 
@@ -82,7 +82,7 @@
                     </div>
                   </div>
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <i class="fa-solid fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                     <input class="form-control" type="text" id="tel" name="tel" placeholder="Inserire numero di telefono" 
                     maxlength="50" value= "<?=$utente-> GetTelefono()?>"> 
@@ -90,16 +90,25 @@
                     </div>
                   </div>
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <i class="fa-solid fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                    <input class="form-control" type="password" id="pass1" name="pass1" placeholder="Inserire password" 
+                    <input class="form-control" type="password" id="pass1" name="pass1" placeholder="Inserire password" oninput="checkPwLive()"
                     onchange="convalidaPw()" value= "<?=$pw?>">
                       <label class="form-label">Password<span class="controlloObbligatorio">*</span></label>
                       <div id="erPw"></div> 
+                      <div id="pwHint" class="small text-muted mt-1">
+                        La password deve contenere:
+                        <ul class="mb-0">
+                          <li id="len">Almeno 8 caratteri</li>
+                          <li id="upper">Una lettera maiuscola</li>
+                          <li id="lower">Una lettera minuscola</li>
+                          <li id="special">Un numero o carattere speciale</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <i class="fa-solid fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                     <input class="form-control" type="password" id="pass2" name="pass2" placeholder="Conferma password" 
                     onchange="conPw()" value= "<?=$pw2?>"> 
@@ -124,10 +133,7 @@
                 </form>
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                  class="img-fluid" alt="Sample image">
-
+                <img src="../Images/draw1.webp" class="img-fluid" alt="Sample image">
               </div>
             </div>
           </div>
@@ -139,133 +145,135 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 <script>
-    function convalidaSub() {
-        if( convalidaNome() & convalidaMail() & convalidaPw() & conPw()) 
-            ok = true;
-        else 
-            ok = false;
-            
-        if(ok == false)
-            event.preventDefault();
-        // ok = convalidaMail();
-        // a = convalidaNome();
-        // if(ok == true) ok = a;
-        // a = convalidaPw();
-        // if(ok == true) ok = a;
-        // a = conPw();
-        // if(ok == true) ok = a;
-    }
+  function checkPwLive() {
+    let p = document.getElementById("pass1").value;
 
-    function convalidaNome() {
-        ok = true;
-        try { 
-        ctrlEr = document.getElementById("erNome");
-        ctrlEr.textContent = "";
+    let len = document.getElementById("len");
+    let upper = document.getElementById("upper");
+    let lower = document.getElementById("lower");
+    let special = document.getElementById("special");
 
-        ctrl = document.getElementById("nome");
-        ctrl.style.borderColor = "black";
+    if (!len || !upper || !lower || !special) return;
 
-        n = ctrl.value;
-        regEx = /(?=^.{3,25}$)[A-Za-z0-9]/g;
-        stringInput = ctrl.value;
-        //corr = stringInput.match(regEx);
-        
-        if(regEx.test(n)) return ok;
-        ok = false;
+    len.style.color = (p.length >= 8) ? "green" : "red";
+    upper.style.color = (/[A-Z]/.test(p)) ? "green" : "red";
+    lower.style.color = (/[a-z]/.test(p)) ? "green" : "red";
+    special.style.color = (/[\d\W]/.test(p)) ? "green" : "red";
+  }
+
+  function convalidaSub() {
+      if( convalidaNome() & convalidaMail() & convalidaPw() & conPw()) 
+          ok = true;
+      else 
+          ok = false;
+          
+      if(ok == false)
+          event.preventDefault();
+  }
+
+  function convalidaNome() {
+      ok = true;
+      try { 
+      ctrlEr = document.getElementById("erNome");
+      ctrlEr.textContent = "";
+
+      ctrl = document.getElementById("nome");
+      ctrl.style.borderColor = "black";
+
+      n = ctrl.value;
+      regEx = /(?=^.{3,25}$)[A-Za-z0-9]/g;
+      stringInput = ctrl.value;
+      //corr = stringInput.match(regEx);
+      
+      if(regEx.test(n)) return ok;
+      ok = false;
+      ctrl.style.borderColor = "red";
+
+      ctrlEr.textContent = "inserire nome valido";
+      ctrlEr.style.Color = "red";
+      } catch(e) {
+          alert ("si è verificato un errore" +e);
+          ok = false;
+      } finally {
+          return ok;
+      }
+  }
+
+  function convalidaMail() {
+      ok = true;
+      try {
+          ctrlEr = document.getElementById("erMail");
+          ctrlEr.textContent = "";
+
+          ctrl = document.getElementById("mail");
+          ctrl.style.borderColor = "black";
+
+          m = ctrl.value;
+          mRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          
+          if(mRegEx.test(m)) return ok;
+          ok = false;
+          ctrl.style.borderColor = "red";
+
+          ctrlEr.textContent = "inserire mail valida";
+          ctrlEr.stylecColor = "red";
+      } catch (e) {
+          alert ("si è verificato un errore" +e);
+          ok = false;
+      } finally {
+          return ok;
+      }
+  }
+
+  function convalidaPw() {
+    let ctrlEr = document.getElementById("erPw");
+    let ctrl = document.getElementById("pass1");
+
+    ctrlEr.textContent = "";
+    ctrl.style.borderColor = "black";
+
+    let p = ctrl.value;
+    let pRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d\W]).{8,}$/;
+
+    if (!pRegEx.test(p)) {
         ctrl.style.borderColor = "red";
-
-        ctrlEr.textContent = "inserire nome valido";
-        ctrlEr.style.Color = "red";
-        } catch(e) {
-            alert ("si è verificato un errore" +e);
-            ok = false;
-        } finally {
-            return ok;
-        }
+        ctrlEr.textContent = "Password non valida";
+        ctrlEr.style.color = "red";
+        return false;
     }
 
-    function convalidaMail() {
-        ok = true;
-        try {
-            ctrlEr = document.getElementById("erMail");
-            ctrlEr.textContent = "";
+    return true;
+  }
 
-            ctrl = document.getElementById("mail");
-            ctrl.style.borderColor = "black";
+  function conPw() {
+      ok = true;
+      try {
+          ctrlEr = document.getElementById("erConPw");
+          ctrlEr.textContent ="";
 
-            m = ctrl.value;
-            mRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if(mRegEx.test(m)) return ok;
-            ok = false;
-            ctrl.style.borderColor = "red";
+          document.getElementById("pass1").style.borderColor="black";
+          document.getElementById("pass2").style.borderColor="black";
 
-            ctrlEr.textContent = "inserire mail valida";
-            ctrlEr.stylecColor = "red";
-        } catch (e) {
-            alert ("si è verificato un errore" +e);
-            ok = false;
-        } finally {
-            return ok;
-        }
-    }
+          pass1 = document.getElementById("pass1").value;
+          pass2 = document.getElementById("pass2").value;
 
-    function convalidaPw() {
-        ok = false;
-        try {
-            ctrlEr = document.getElementById("erPw");
-            ctrlEr.textContent = "";
+          if ((pass1!=pass2) || (pass1.trim().length == 0) || (pass2.trim().length == 0)) {
+              document.getElementById("pass1").style.borderColor="red";
+              document.getElementById("pass2").style.borderColor="red";
 
-            ctrl = document.getElementById("pass1");
-            ctrl.style.borderColor = "black";
+              ctrlEr.textContent = "le password non combaciano";
+              ctrlEr.stylecColor = "red";
+              ok = false;
+          }
 
-            p = ctrl.value;
-            pRegEx = /[(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$]/;
-            
-            if(pRegEx.test(p)) 
-            {
-                ctrl.style.borderColor = "red";
-                ctrlEr.textContent = "inserire password valida, deve contenere almeno 1 lettera maiuscola, 1 lettera minuscola, 1 carattere speciale ed essere lunga minimo 8 caratteri";
-                ctrlEr.stylecColor = "red";
-                return ok;
-            }
-            ok = true;
-        } catch (e) {
-            alert ("si è verificato un errore" +e);
-        } finally {
-            return ok;
-        }
-    }
-
-    function conPw() {
-        ok = true;
-        try {
-            ctrlEr = document.getElementById("erConPw");
-            ctrlEr.textContent ="";
-
-            document.getElementById("pass1").style.borderColor="black";
-            document.getElementById("pass2").style.borderColor="black";
-
-            pass1 = document.getElementById("pass1").value;
-            pass2 = document.getElementById("pass2").value;
-
-            if ((pass1!=pass2) || (pass1.trim().length == 0) || (pass2.trim().length == 0)) {
-                document.getElementById("pass1").style.borderColor="red";
-                document.getElementById("pass2").style.borderColor="red";
-
-                ctrlEr.textContent = "le password non combaciano";
-                ctrlEr.stylecColor = "red";
-                ok = false;
-            }
-
-        } catch (e) {
-            alert ("si è verificato un errore" +e);
-            ok = false;
-        } finally {
-            return ok;
-        }
-        
-    }
+      } catch (e) {
+          alert ("si è verificato un errore" +e);
+          ok = false;
+      } finally {
+          return ok;
+      }
+      
+  }
 </script>
 </body>
 </html>
