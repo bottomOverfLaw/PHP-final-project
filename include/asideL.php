@@ -26,7 +26,7 @@
         <!-- <button type="button" class="btn btn-outline-success"><a href="..\utenti\gestioneUtente.php" class="link-dark">Utenti</a></button> -->
         <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/login.php" class="link-dark link-underline-opacity-0">Login</a></button>
         <br>
-        <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/newUtente.php" class="link-dark link-underline-opacity-0">Iscriviti</></button>
+        <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/newUtente.php" class="link-dark link-underline-opacity-0">Create an account</></button>
         <br>
         <?php
         }
@@ -36,9 +36,9 @@
         ?>
         <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/logout.php" class="link-dark link-underline-opacity-0">Logout</a></button>
         <br>
-        <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/changeData.php" class="link-dark link-underline-opacity-0">Cambia i tuoi dati</a></button>
+        <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/changeData.php" class="link-dark link-underline-opacity-0">Change your data</a></button>
         <br>
-        <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/changePw.php" class="link-dark link-underline-opacity-0">Cambia la password</a></button>
+        <button type="button" class="btn btn-outline-danger btn-lg"><a href="/final_project/views/changePw.php" class="link-dark link-underline-opacity-0">Change your password</a></button>
         <br>
         <?php
          
@@ -50,7 +50,6 @@
                   class="img-fluid" alt="Sample image">
         <img src="https://www.pngmart.com/files/11/E-Commerce-PNG-Image.png"
                   class="img-fluid" alt="Sample image">
-        <!-- <button type="button" class="btn btn-outline-success"><a href="..\login\login.php" class="link-dark">Login</a></button> -->
     </div>
   </div>
 </div>
