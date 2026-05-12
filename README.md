@@ -22,17 +22,59 @@ TSS is a fake e-commerce web app developed as a school project. It mimics the co
 ---
 
 ## 🗄️ Database Structure
-
+ 
 The application uses a MySQL database with the following tables:
-
-| Table | Description |
-|---|---|
-| `utenti` | Registered users (id, name, email, password, role) |
-| `prodotti` | Products available in the store (id, name, price, description, category, manufacturer) |
-| `carrello` | Shopping cart entries linking users to products |
-| `categoria` | Product categories |
-| `produttore` | Product manufacturers/brands |
-
+ 
+### `utenti`
+| Column | Type | Notes |
+|---|---|---|
+| UtenteId | int | PK, auto increment |
+| Mail | varchar(50) | Not null |
+| Nome | varchar(25) | Not null |
+| Cognome | varchar(50) | Not null |
+| Telefono | varchar(15) | |
+| Indirizzo | varchar(50) | |
+| Cap | varchar(4) | |
+| Provincia | varchar(25) | |
+| TipoUtente | varchar(5) | |
+| Password | varchar(500) | |
+ 
+### `prodotti`
+| Column | Type | Notes |
+|---|---|---|
+| ProdottoID | int | PK, auto increment |
+| Prodotto | varchar(50) | Not null |
+| Descrizione | varchar(500) | Not null |
+| UnitaMisura | varchar(10) | Not null |
+| Prezzo | float | Not null |
+| ProduttoreId | int | Not null, FK |
+| CategoriaId | int | Not null, FK |
+| NomeImmagine | varchar(100) | Not null |
+| Attivo | char(5) | |
+ 
+### `carrello`
+| Column | Type | Notes |
+|---|---|---|
+| CarrelloId | int | PK, auto increment |
+| UtenteId | int | Not null, FK |
+| ArticoloId | int | Not null, FK |
+| Prezzo | decimal(10,2) | Not null |
+| Qta | int | Not null |
+ 
+### `categoria`
+| Column | Type | Notes |
+|---|---|---|
+| CategoriaId | int | PK, auto increment |
+| NomeCategoria | varchar(100) | Not null |
+ 
+### `produttore`
+| Column | Type | Notes |
+|---|---|---|
+| NomeProduttore | varchar(100) | Not null |
+| ProduttoreId | int | PK, auto increment |
+ 
+---
+ 
 ---
 
 ## 🛠️ Tech Stack
