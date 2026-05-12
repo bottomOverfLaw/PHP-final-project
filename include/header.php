@@ -1,7 +1,16 @@
 <header class="row p-2 text-dark" style="background-color: #E06469 ;">
 <div class="col-sm-2">
-<a href="..\home\index.php"><img src="../Images/lotus.webp"
-style="width: 185px;" alt="logo"></a>
+<?php $isHome = strpos($_SERVER['PHP_SELF'], 'index.php') !== false; ?>
+
+<?php if (!$isHome): ?>
+    <a href="../home/index.php">
+<?php endif; ?>
+
+        <img src="/final_project/Images/lotus.webp" style="width: 185px;" alt="logo">
+
+<?php if (!$isHome): ?>
+    </a>
+<?php endif; ?>
 </div>
 <div class="col-sm-8 item-aling-center text-light">
 <h1>TSS-Tecnico Sviluppo Software</h1>

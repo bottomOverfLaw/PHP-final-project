@@ -87,7 +87,7 @@
                     <div class="form-outline flex-fill mb-0">
                         <input class="form-control ctrlinput" type="text" id="nome" name="nome"
                                placeholder="Enter name" value="<?= $uN ?>">
-                        <label class="form-label controlloObbligatorio">Name *</label>
+                        <label class="form-label">Name <span class="controlloObbligatorio">*</span></label>
                         <div id="erNome"></div>
                     </div>
                 </div>
@@ -96,8 +96,8 @@
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                         <input class="form-control ctrlinput" type="text" id="cognome" name="cognome"
-                               placeholder="Enter surname" value="<?= $uC ?>">
-                        <label class="form-label controlloObbligatorio">Surname *</label>
+                               placeholder="Enter surname" value="<?= $uC ?>"> 
+                        <label class="form-label ">Surname <span class="controlloObbligatorio">*</span></label>
                     </div>
                 </div>
 
@@ -106,7 +106,7 @@
                     <div class="form-outline flex-fill mb-0">
                         <input class="form-control ctrlinput" type="text" id="mail" name="mail"
                                placeholder="Enter a valid mail" value="<?= $uM ?>">
-                        <label class="form-label controlloObbligatorio">Mail *</label>
+                        <label class="form-label ">Mail <span class="controlloObbligatorio">*</span></label>
                         <div id="erMail"></div>
                     </div>
                 </div>

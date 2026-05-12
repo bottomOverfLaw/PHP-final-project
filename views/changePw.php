@@ -60,56 +60,53 @@
               <h5><a href="../home/index.php" class="link-dark"><i class="fas fa-arrow-left fa-lg me-3 fa-fw"></i></a></h5>
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Cambia la password</p>
                 <form action="changePw.php" method="post" >
-        <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-            <div class="form-outline flex-fill mb-0">
-            <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="text" id="mail" name="mail" placeholder="Inserire mail valida" 
-             value= "<?=$utente-> GetMail()?>"> 
-             <label class="form-label">Mail<span class="controlloObbligatorio">*</span></label>
-             <div id="erMail"></div>
-        </div>
-        </div>
-        <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                <div class="form-outline flex-fill mb-0">
-                    <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="password" id="passold" name="passold" placeholder="Inserire password" 
-                    value= "<?=$oldPw?>">
-                    <label class="form-label">Old passord<span class="controlloObbligatorio">*</span></label></span>
-                        <div id="erPw"></div> 
-                </div> 
-        </div> 
-        <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                <div class="form-outline flex-fill mb-0">
-                    <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="password" id="passnew" name="passnew" placeholder="Conferma password" 
-                    value= "<?=$pw2?>"> 
-                    <label class="form-label">New password<span class="controlloObbligatorio">*</span></label></span>
-                    <div id="erConPw"></div>
-                </div> 
-        </div>
-        <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                <div class="form-outline flex-fill mb-0">
-                    <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="password" id="passnew2" name="passnew2" placeholder="Conferma password" 
-                    value= "<?=$pw2?>"> 
-                    <label class="form-label">Confirm new password<span class="controlloObbligatorio">*</span></label></span>
-                        <div id="erConPw"></div>
-                </div>
-        </div>
-        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-            <button class="btn btn-primary" type="submit" value="submit" name="btnSub">Change password</button>
-            <!-- Go back without saving — browser history back -->
-            <a href="javascript:history.back()" class="btn btn-secondary">
-                <i class="fas fa-arrow-left me-1"></i> Cancel
-            </a>
-        </div>
-        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-            <a href="login.php">Go to login </a>
-        </div>
-    </form>
-    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                  class="img-fluid" alt="Sample image">
-
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                        <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="text" id="mail" name="mail" placeholder="Inserire mail valida" 
+                        value= "<?=$utente-> GetMail()?>"> 
+                        <label class="form-label">Mail<span class="controlloObbligatorio">*</span></label>
+                        <div id="erMail"></div>
+                    </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                                <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="password" id="passold" name="passold" placeholder="Inserire password" 
+                                value= "<?=$oldPw?>">
+                                <label class="form-label">Old passord<span class="controlloObbligatorio">*</span></label></span>
+                                    <div id="erPw"></div> 
+                            </div> 
+                    </div> 
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                                <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="password" id="passnew" name="passnew" placeholder="Conferma password" 
+                                value= "<?=$pw2?>"> 
+                                <label class="form-label">New password<span class="controlloObbligatorio">*</span></label></span>
+                                <div id="erConPw"></div>
+                            </div> 
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                                <input class="form-control ctrlinput d-inline-flex focus-ring border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px" type="password" id="passnew2" name="passnew2" placeholder="Conferma password" 
+                                value= "<?=$pw2?>"> 
+                                <label class="form-label">Confirm new password<span class="controlloObbligatorio">*</span></label></span>
+                                    <div id="erConPw"></div>
+                            </div>
+                    </div>
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button class="btn btn-primary" type="submit" value="submit" name="btnSub">Change password</button>
+                        <!-- Go back without saving — browser history back -->
+                        <a href="javascript:history.back()" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left me-1"></i> Cancel
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <a href="login.php">Go to login </a>
+                    </div>
+                </form>
               </div>
             </div>
           </div>

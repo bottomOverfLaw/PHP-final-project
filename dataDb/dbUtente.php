@@ -99,7 +99,6 @@ class DbUtente extends DbRepository
         $ok = password_verify($pw, $rows[0]["Password"]);
         //var_dump($ok);
         if(!$ok) {
-            Common::Logout();
             return false;
         } else {
             Common::SetUserId($rows[0]["UtenteId"]);
