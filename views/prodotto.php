@@ -6,13 +6,11 @@
     <title>Prodotto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <!-- Load Vue followed by BootstrapVue, and BootstrapVueIcons -->
-    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
     <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
     <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
-    <script src="https://kit.fontawesome.com/6ec9c7cfba.js"crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
     <style>
         .controlloObbligatorio{
             color: red;
@@ -109,11 +107,11 @@ if(isset($_POST["btnSub"])) {
                         </h4>
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
-                        <i class="far fa-star fa-sm checked" title="Bad"></i>  
-                        <i class="far fa-star fa-sm checked" title="Poor"></i>
-                        <i class="far fa-star fa-sm checked" title="OK"></i>
-                        <i class="far fa-star fa-sm checked" title="Good"></i>
-                        <i class="far fa-star fa-sm unchecked" title="Excellent"></i>
+                        <i class="fas fa-star fa-sm checked" title="Bad"></i>  
+                        <i class="fas fa-star fa-sm checked" title="Poor"></i>
+                        <i class="fas fa-star fa-sm checked" title="OK"></i>
+                        <i class="fas fa-star fa-sm checked" title="Good"></i>
+                        <i class="fas fa-star fa-sm unchecked" title="Excellent"></i>
                         </div>
                         <div class="product_description">
                             <?php 
@@ -175,9 +173,6 @@ if(isset($_POST["btnSub"])) {
             <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
 
             <div class="d-flex flex-start">
-              <img class="rounded-circle shadow-1-strong me-3"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="60"
-                height="60" />
               <div>
                 <h6 class="fw-bold mb-1">Maggie Marsh</h6>
                 <div class="d-flex align-items-center mb-3">
@@ -188,10 +183,10 @@ if(isset($_POST["btnSub"])) {
                   <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
                   <a href="#!" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
                 </div>
-                        <i class="far fa-star fa-sm checked" title="Bad"></i>  
-                        <i class="far fa-star fa-sm checked" title="Poor"></i>
-                        <i class="far fa-star fa-sm checked" title="OK"></i>
-                        <i class="far fa-star fa-sm checked" title="Good"></i>
+                        <i class="fas fa-star fa-sm checked" title="Bad"></i>  
+                        <i class="fas fa-star fa-sm checked" title="Poor"></i>
+                        <i class="fas fa-star fa-sm checked" title="OK"></i>
+                        <i class="fas fa-star fa-sm checked" title="Good"></i>
                 <p class="mb-0">
                   Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -206,9 +201,6 @@ if(isset($_POST["btnSub"])) {
 
           <div class="card-body p-4">
             <div class="d-flex flex-start">
-              <img class="rounded-circle shadow-1-strong me-3"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(26).webp" alt="avatar" width="60"
-                height="60" />
               <div>
                 <h6 class="fw-bold mb-1">Lara Stewart</h6>
                 <div class="d-flex align-items-center mb-3">
@@ -219,11 +211,11 @@ if(isset($_POST["btnSub"])) {
                   <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
                   <a href="#!" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
                 </div>
-                        <i class="far fa-star fa-sm checked" title="Bad"></i>  
-                        <i class="far fa-star fa-sm checked" title="Poor"></i>
-                        <i class="far fa-star fa-sm checked" title="OK"></i>
-                        <i class="far fa-star fa-sm checked" title="Good"></i>
-                        <i class="far fa-star fa-sm checked" title="Good"></i>
+                        <i class="fas fa-star fa-sm checked" title="Bad"></i>  
+                        <i class="fas fa-star fa-sm checked" title="Poor"></i>
+                        <i class="fas fa-star fa-sm checked" title="OK"></i>
+                        <i class="fas fa-star fa-sm checked" title="Good"></i>
+                        <i class="fas fa-star fa-sm checked" title="Good"></i>
                 <p class="mb-0">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                   Omnis, vero accusamus, cumque provident totam quos minus consequatur sit tenetur illo, 
@@ -237,9 +229,6 @@ if(isset($_POST["btnSub"])) {
 
           <div class="card-body p-4">
             <div class="d-flex flex-start">
-              <img class="rounded-circle shadow-1-strong me-3"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(33).webp" alt="avatar" width="60"
-                height="60" />
               <div>
                 <h6 class="fw-bold mb-1">Alexa Bennett</h6>
                 <div class="d-flex align-items-center mb-3">
@@ -250,9 +239,9 @@ if(isset($_POST["btnSub"])) {
                   <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
                   <a href="#!" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
                 </div>
-                        <i class="far fa-star fa-sm checked" title="Bad"></i>  
-                        <i class="far fa-star fa-sm checked" title="Poor"></i>
-                        <i class="far fa-star fa-sm checked" title="OK"></i>
+                        <i class="fas fa-star fa-sm checked" title="Bad"></i>  
+                        <i class="fas fa-star fa-sm checked" title="Poor"></i>
+                        <i class="fas fa-star fa-sm checked" title="OK"></i>
                 <p class="mb-0">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                   Totam impedit culpa repellat amet omnis! At, dolorem. 
@@ -271,9 +260,6 @@ if(isset($_POST["btnSub"])) {
 
           <div class="card-body p-4">
             <div class="d-flex flex-start">
-              <img class="rounded-circle shadow-1-strong me-3"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(24).webp" alt="avatar" width="60"
-                height="60" />
               <div>
                 <h6 class="fw-bold mb-1">Betty Walker</h6>
                 <div class="d-flex align-items-center mb-3">
@@ -284,11 +270,11 @@ if(isset($_POST["btnSub"])) {
                   <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
                   <a href="#!" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
                 </div>
-                        <i class="far fa-star fa-sm checked" title="Bad"></i>  
-                        <i class="far fa-star fa-sm checked" title="Poor"></i>
-                        <i class="far fa-star fa-sm checked" title="OK"></i>
-                        <i class="far fa-star fa-sm checked" title="Good"></i>
-                        <i class="far fa-star fa-sm checked" title="Good"></i>
+                        <i class="fas fa-star fa-sm checked" title="Bad"></i>  
+                        <i class="fas fa-star fa-sm checked" title="Poor"></i>
+                        <i class="fas fa-star fa-sm checked" title="OK"></i>
+                        <i class="fas fa-star fa-sm checked" title="Good"></i>
+                        <i class="fas fa-star fa-sm checked" title="Good"></i>
                 <p class="mb-0">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                   Impedit beatae, molestias laborum ipsam, reprehenderit quisquam a voluptatem odio architecto numquam in vitae
@@ -307,16 +293,13 @@ if(isset($_POST["btnSub"])) {
   <!-- sezione commento -->
           <div class="card-body p-4">
             <div class="d-flex flex-start w-100">
-              <img class="rounded-circle shadow-1-strong me-3"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(21).webp" alt="avatar" width="65"
-                height="65" />
               <div class="w-100">
                 <h5>Add a comment</h5>
-                    <i class="far fa-star fa-sm text-dark" title="Bad"></i>
-                    <i class="far fa-star fa-sm text-dark" title="Poor"></i>
-                    <i class="far fa-star fa-sm text-dark" title="OK"></i>
-                    <i class="far fa-star fa-sm text-dark" title="Good"></i>
-                    <i class="far fa-star fa-sm text-dark" title="Excellent"></i>
+                    <i class="fas fa-star fa-sm text-dark" title="Bad"></i>
+                    <i class="fas fa-star fa-sm text-dark" title="Poor"></i>
+                    <i class="fas fa-star fa-sm text-dark" title="OK"></i>
+                    <i class="fas fa-star fa-sm text-dark" title="Good"></i>
+                    <i class="fas fa-star fa-sm text-dark" title="Excellent"></i>
                 <div class="form-outline">
                 <label class="form-label" for="textAreaExample">What is your view?</label>
                   <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
