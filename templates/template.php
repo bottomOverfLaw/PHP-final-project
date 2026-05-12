@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>plz buy my site asap, i'm poor af</title> -->
     <title>Law's commerce</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,30 +18,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body >
+     <!-- HEADER -->
     <div class="container-fluid" >
         <?php
             require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'common.php');
             require_once(Common::$PathInclude."header.php");
         ?>
     </div>
+    <!-- MAIN LAYOUT - 3 column grid (sidebar | content | sidebar) -->
     <div class="container-fluid">
         <main class="row d-flex">
             <aside id="asideL" class="col-sm-2 p-2 text-dark" style="background-color: #FFBC80;">
+                <!-- LEFT SIDEBAR - categories/filters -->
                 <?php
                     require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'common.php');
                     require_once(Common::$PathInclude."asideL.php");
                 ?>
             </aside>
+            <!-- MAIN CONTENT AREA -->
+            <!-- $c is a dynamic variable — the page loaded here changes depending on the route -->
             <div class="col-sm-8" style="background-color: #F2B6A0;">
                 <?php
                 require_once("$c");
                 ?>
             </div>
+            <!-- RIGHT SIDEBAR - currently empty -->
             <aside id="asideR" class="col-sm-2 p-2 text-dark" style="background-color: #F2B6A0;">
             <p></p>
             </aside> 
     </main>
     </div>
+    <!-- FOOTER -->
     <div class="continer-fluid mt-auto " style="background-color:#FFE7D5;">
         <?php
             require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'common.php');
@@ -53,4 +59,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
-<!-- style="bottom: 0;" -->
